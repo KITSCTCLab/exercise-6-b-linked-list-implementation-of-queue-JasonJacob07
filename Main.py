@@ -10,11 +10,12 @@ class Queue:
 
 #adding items to the queue.
   def enqueue(self, data) -> None:
+    new = Node(data)
     if not self.last is None:
-      self.last.next = Node(data)
+      self.last.next = new
     if self.head is None:
-      self.head = Node(data)
-    self.last = Node(data)
+      self.head = new
+    self.last = new
     
 #removing items from the queue
   def dequeue(self) -> None: 
@@ -25,9 +26,10 @@ class Queue:
     
 #displaying status of the queue
   def status(self) -> None:
-    while self.head != None:
-     print(self.head.data, "=>", sep = "", end = "")
-     self.head = self.head.next
+    temp = self.head
+    while temp != None:
+     print(temp.data, "=>", sep = "", end = "")
+     temp = temp.next
     print("None")
     
 queue = Queue()
