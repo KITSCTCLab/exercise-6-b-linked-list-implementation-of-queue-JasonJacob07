@@ -8,8 +8,7 @@ class Queue:
     self.head = None
     self.last = None
 
-#adding items to the queue.
-  def enqueue(self, data) -> None:
+  def enqueue(self, data) -> None: #adding items to the queue.
     new = Node(data)
     if not self.last is None:
       self.last.next = new
@@ -17,15 +16,13 @@ class Queue:
       self.head = new
     self.last = new
     
-#removing items from the queue
-  def dequeue(self) -> None: 
+  def dequeue(self) -> None: #removing items from the queue
     if self.head == None:
       pass
     else:
       self.head = self.head.next
-    
-#displaying status of the queue
-  def status(self) -> None:
+  
+  def status(self) -> None:  #displaying status of the queue
     while self.head != None:
      print(self.head.data, "=>", sep = "", end = "")
      self.head = self.head.next
