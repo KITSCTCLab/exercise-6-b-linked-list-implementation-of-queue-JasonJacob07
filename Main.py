@@ -26,10 +26,10 @@ class Queue:
     
 #displaying status of the queue
   def status(self) -> None:
-     temp = self.head
-     while temp != None:
-      print(temp.data, "=>", sep = "", end = "")
-      temp = temp.next
+    temp = self.head
+    while temp != None:
+     print(temp.data, "=>", sep = "", end = "")
+     temp = temp.next
     print("None")
     
 queue = Queue()
