@@ -3,23 +3,35 @@ class Node:
     self.data = data
     self.next = None
 
-
 class Queue:
   def __init__(self):
     self.head = None
     self.last = None
 
+#adding items to the queue.
   def enqueue(self, data) -> None:
-    # Write your code here
-
-  def dequeue(self) -> None:
-    # Write your code here
-
+    new = Node(data)
+    if not self.tail is None:
+      self.tail.next = new
+    if self.head is None:
+      self.head = new
+    self.tail = new
+    
+#removing items from the queue
+  def dequeue(self) -> None: 
+    if self.head == None:
+      pass
+    else:
+      self.head = self.head.next
+    
+#displaying status of the queue
   def status(self) -> None:
-    # Write your code here
-
-
-# Do not change the following code
+     temp = self.head
+     while temp != None:
+      print(temp.data, "=>", sep = "", end = "")
+      temp = temp.next
+    print("None")
+    
 queue = Queue()
 operations = []
 for specific_operation in input().split(','):
