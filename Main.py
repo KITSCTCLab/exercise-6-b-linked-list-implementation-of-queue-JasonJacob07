@@ -11,11 +11,11 @@ class Queue:
 #adding items to the queue.
   def enqueue(self, data) -> None:
     new = Node(data)
-    if not self.tail is None:
-      self.tail.next = new
+    if not self.last is None:
+      self.last.next = new
     if self.head is None:
       self.head = new
-    self.tail = new
+    self.last = new
     
 #removing items from the queue
   def dequeue(self) -> None: 
